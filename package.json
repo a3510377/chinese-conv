@@ -1,12 +1,11 @@
 {
   "name": "monkey-chinese",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "description": "由 chinese-conv 修改，添加 types 及修改部分程式",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production tsc -p .",
     "clean": "rimraf lib/",
@@ -40,7 +39,6 @@
   },
   "files": [
     "bin/",
-    "dist/",
-    "src/"
+    "dist/"
   ]
 }
