@@ -3,9 +3,9 @@ import { tw_cn as tw_cnData } from "./data/tw_cn";
 
 export type dataType = typeof cn_twData | typeof tw_cnData;
 
-const main = (data: dataType, ...args: string[]): string =>
+export const main = (data: dataType, ...args: string[]): string =>
   args
-    .join("")
+    .join(" ")
     .replace(/[^\x00-\xFF]/g, str =>
       str in data ? data[<keyof dataType>str] : str
     );
