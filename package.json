@@ -1,38 +1,46 @@
 {
-  "name": "chinese-conv",
-  "version": "1.0.1",
-  "description": "簡轉繁，繁轉簡。Conversion between Traditional and Simplified Chinese",
-  "main": "dist/index.js",
-  "keywords": [
-    "Traditional",
-    "unicode",
-    "Simplified",
-    "conversion",
-    "Chinese",
-    "convert",
-    "transform"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "babel": "^5.5.7",
-    "chai": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^5.1.0",
-    "mocha": "^2.2.5"
-  },
+  "name": "monkey-format",
+  "version": "1.3.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "description": "製作 format 函數，符合 python 等 函數用法",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "npm run build && gulp watch",
-    "build": "gulp clean && gulp build",
-    "test": "mocha --check-leaks"
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "clean": "rimraf lib/",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha \"test/**/*.ts\"",
+    "watch": "tsc -p . --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pleasurazy/chinese-conv.git"
+  "engines": {
+    "node": ">= 8"
   },
-  "author": "Pleasurazy <pleasurazy@gmail.com>",
-  "license": "http://wayne-fu.blogspot.com/",
-  "bugs": {
-    "url": "https://github.com/Pleasurazy/chinese-conv/issues"
+  "keywords": [
+    "monkey-chinese",
+    "chinese",
+    "monkey",
+    "type-chinese"
+  ],
+  "author": "a3510377 <a102009102009@gmail.com>",
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.1.0",
+    "cross-env": "^6.0.3",
+    "husky": "^3.1.0",
+    "lint-staged": "^12.3.2",
+    "mocha": "^9.2.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.5.4",
+    "ts-node-test-register": "^8.0.1",
+    "typescript": "^3.7.4"
   },
-  "homepage": "https://github.com/Pleasurazy/chinese-conv#readme"
+  "files": [
+    "bin/",
+    "dist/",
+    "src/"
+  ]
 }
